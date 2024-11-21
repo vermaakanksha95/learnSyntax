@@ -1,6 +1,7 @@
 @extends('admin.adminbase')
 @section('content')
 <div class="flex w-full gap-2">
+    <h1>hello</h1>
     <form action="{{route('course.store')}}" method="post" enctype="multipart/form-data">
         @csrf
 
