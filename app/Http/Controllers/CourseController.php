@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CourseController extends Controller
 {
@@ -12,7 +13,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses = course::all();
+        return view('admin.manageCourse')->with('courses',$courses);
     }
 
     /**
@@ -20,7 +22,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        //no need
     }
 
     /**
@@ -28,7 +30,26 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'course_title' =>'required|max:225',
+            'description' =>'required',
+            'author' =>'required',
+            'author_image' =>'required|max:2048',
+            'image' => 'required|max:2048',
+            
+
+            
+        ]);
+        $image = $request->file('image');
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+        $image->move(public_path('image'),$imageName);
+        $data['image'] = $imageName;
+        $data['course_slug'] = Str::slug($data['course_title']);
+
+        Course::create($data);
+        return redirect()->route('course.index')->with('success',"course created successfully");
+
+        
     }
 
     /**
