@@ -4,8 +4,9 @@
     <div class=" flex w-full h-[450px] bg-slate-400">
         <div class=" flex  w-full p-10 gap-2">
             <div class=" flex flex-col ">
-            <h1 class=" text-3xl font-sansserif font-semibold">{{$course->course_title}}</h1>
-                <p class=" mt-3 text-lg  ">{{$course->description}}</p>
+                <h1 class=" text-3xl font-sansserif font-semibold">{{$course->course_title}}</h1>
+
+                <p class=" mt-3 text-lg">{{$course->description}}</p>
                 <h1></h1>
 
             </div>
