@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/",[UserController::class,"index"])->name('homepage');
+Route::get("/{course_slug}",[UserController::class,"viewCourse"])->name('view.course');
 Route::prefix("user")->group(function(){
 
 });

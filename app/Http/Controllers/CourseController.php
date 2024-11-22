@@ -22,7 +22,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //no need
+        return view("admin.InsertCourse");
+    
     }
 
     /**
