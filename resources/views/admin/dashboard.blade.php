@@ -28,8 +28,8 @@
 
                         </div>
                         <div class="bg-red-500 p-6 rounded-lg shadow-md">
-                            <h2 class="text-xl font-semibold">Fees Collected</h2>
-                            <p class="text-3xl font-bold">$13,921</p>
+                            <h2 class="text-xl font-semibold">Total Posts</h2>
+                            <p class="text-3xl font-bold">10</p>
 
                         </div>
                     </div>
