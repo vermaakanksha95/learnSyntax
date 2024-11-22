@@ -13,9 +13,9 @@ class UserController extends Controller
 
     }
 
-    public function viewCourse($course_slug){
-        $data['course'] = Course::where('course_slug',$course_slug)->first();
-        return view("viewCourse",$data);
-
+    public function viewCourse($course_slug)
+    {
+        $data['course'] = Course::where('course_slug', $course_slug)->first();
+        return view("viewCourse", $data);
     }
 }
