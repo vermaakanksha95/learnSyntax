@@ -1,13 +1,13 @@
 @extends('admin.adminbase')
 @section('title',"Manage Courses |")
 @section('content')
-<div class=" flex flex-1 flex-col gap-5 p-5">
+<div class="   gap-5 px-[5%] py-10">
     <div class=" flex flex-1 justify-between items-center">
         <h2 class=" border-l-4 border-teal-600 pl-2 text-xl">Manage Courses({{{count($courses)}}})</h2>
         <a href="{{route('course.create')}}" class=" bg-teal-600 text-white px-3 py-2 rounded">Create Course</a>
 
-
     </div>
+
     <div class=" flex flex-1">
         @session('error')
         <div class=" bg-red-400 text-white p-3 rounded">{{session('error')}}</div>
@@ -74,18 +74,21 @@
                     </td>
 
                     <td class="px-6 py-4 flex gap-2">
-                         <form action="{{route('course.destroy',$course)}}" method="post">
+                        <form action="{{route('course.destroy',$course)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="bg-red-600 hover:bg-red-800 text-white px-3 py-2 rounded ">Delete</button>
                         </form>
+                        <a href="{{route('chapter.create')}}">add chapter</a>
                     </td>
 
                 </tr>
                 @endforeach
             </tbody>
         </table>
+
     </div>
+
 
 </div>
 
