@@ -32,7 +32,7 @@
                 </div>
                 <div class="text-md">
                     Already have an account?
-                    <a href="{{route('auth.login')}}" class="text-blue-700 underline">Login</a>
+                    <a href="{{route('login')}}" class="text-blue-700 underline">Login</a>
                 </div>
 
             </form>

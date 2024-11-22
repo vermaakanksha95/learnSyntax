@@ -9,7 +9,7 @@
                 <span class="text-xl font-medium text-gray-700">Sign in with Google</span>
             </a>
 
-            <form action="{{route('auth.login')}}" method="post" class="gap-3 flex flex-col ">
+            <form action="{{route('login')}}" method="post" class="gap-3 flex flex-col ">
                 @csrf
                 <h2 class="text-2xl font-semibold mt-2">Login Here!</h2>
 

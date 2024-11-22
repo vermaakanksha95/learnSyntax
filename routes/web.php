@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
-
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +20,9 @@ Route::prefix("admin")->group(function(){
 
 Route::prefix("auth")->group(function(){
     Route::controller(AuthController::class)->group(function(){
-        Route::match(["get","post"],"login")->name("auth.login");
-        Route::match(["get","post"],"register")->name("auth.register");
+        Route::match(["get","post"],"/login","login")->name("login");
+        Route::match(["get","post"],"/register","register")->name("auth.register");
+        Route::get("/logout","logout")->name("auth.logout");
 
     });
 });
